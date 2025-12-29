@@ -630,8 +630,30 @@ class AgenticRAG {
     addTimingToMessage(messageDiv, timingData) {
         const contentDiv = messageDiv.querySelector('.message-content');
 
-        // Format breakdown items
-        const breakdownItems = Object.entries(timingData.breakdown || {})
+        // Calculate total if not provided
+        let totalMs = timingData.total_ms;
+        if (!totalMs && timingData.breakdown) {
+            totalMs = Object.values(timingData.breakdown).reduce((sum, val) => sum + val, 0);
+            totalMs = Math.round(totalMs * 100) / 100; // Round to 2 decimals
+        }
+
+        // Format breakdown items with total first
+        const totalDisplay = totalMs ? `${totalMs}ms` : 'N/A';
+
+        let breakdownItems = '';
+
+        // Add total as first item in breakdown
+        if (totalMs) {
+            breakdownItems += `
+                <div class="timing-item timing-total">
+                    <span class="timing-label"><strong>Total Time</strong></span>
+                    <span class="timing-value"><strong>${totalDisplay}</strong></span>
+                </div>
+            `;
+        }
+
+        // Add individual component timings
+        breakdownItems += Object.entries(timingData.breakdown || {})
             .map(([nodeName, durationMs]) => {
                 const displayName = nodeName.replace(/_/g, ' ');
                 return `
@@ -650,7 +672,7 @@ class AgenticRAG {
                         <circle cx="12" cy="12" r="10"/>
                         <polyline points="12 6 12 12 16 14"/>
                     </svg>
-                    ${timingData.total_ms}ms total
+                    Total Latency: ${totalDisplay}
                 </button>
                 <div class="timing-breakdown">
                     ${breakdownItems}

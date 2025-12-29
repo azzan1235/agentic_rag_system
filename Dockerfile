@@ -27,12 +27,9 @@ COPY . .
 # Create directory for ChromaDB persistence
 RUN mkdir -p /app/chroma_db /app/data
 
-# Expose port
-EXPOSE 8000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:8000/health')" || exit 1
+# Expose port (Cloud Run will set PORT env var)
+EXPOSE 8080
 
 # Run the application
-CMD ["uvicorn", "app.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Cloud Run provides PORT env var, default to 8080 if not set
+CMD uvicorn app.api.main:app --host 0.0.0.0 --port ${PORT:-8080}

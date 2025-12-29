@@ -10,6 +10,27 @@ A production-ready Agentic RAG system that autonomously improves retrieval throu
 - **Streaming Responses**: Real-time response streaming via Server-Sent Events (SSE)
 - **RAG Evaluation**: Built-in metrics for faithfulness, relevance, precision, and recall
 - **Production Ready**: Comprehensive testing, Docker support, CI/CD pipeline, structured logging
+- **Cloud Deployed**: Fully containerized and deployed on Google Cloud Run with authentication
+
+
+**Deployment Details:**
+- Deployed on Google Cloud Run (Authenticated)
+- Docker containerized for scalable, serverless execution
+- Auto-scaling: 0-2 instances based on traffic
+- Production-ready with structured logging and monitoring
+
+### Want to Test It Yourself?
+
+**Option 1: Deploy Your Own Instance**
+```bash
+# Clone and deploy to your own Cloud Run (requires gcloud CLI)
+git clone <repository-url>
+cd agentic-rag
+gcloud run deploy agentic-rag --source .
+```
+
+**Option 2: Run Locally**
+See the [Quick Start](#quick-start) section below for local setup instructions.
 
 ## Architecture
 
@@ -44,12 +65,13 @@ START → Router → Retriever → Grader → [Decision]
 
 ## Quick Start
 
-### Prerequisites
+### Running Locally
 
+**Prerequisites:**
 - Python 3.11+
 - Google API Key (for Gemini)
 
-### Installation
+**Installation:**
 
 1. Clone the repository:
 ```bash
@@ -74,14 +96,14 @@ cp .env.example .env
 # Edit .env and add your GOOGLE_API_KEY
 ```
 
-### Running the Application
+**Running the Application:**
 
-**Development:**
+Development mode:
 ```bash
 uvicorn app.api.main:app --reload
 ```
 
-**Docker:**
+Using Docker:
 ```bash
 docker-compose up --build
 ```
